@@ -111,7 +111,7 @@ class ValidInputTest(unittest.TestCase):
                 correct_output = np.array(Image.open(self.images[image_index].unscrambled_image_path))
                 user_output = np.array(Image.open("images/user_output.png"))
 
-                self.assertTrue((user_output == correct_output).all())
+                self.assertTrue((user_output == correct_output).all(), msg=f"failed for {self.images[image_index].unscrambled_image_path}")
     
 
 if __name__ == "__main__":
