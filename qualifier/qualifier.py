@@ -29,7 +29,7 @@ def rearrange_tiles(image_path: str, tile_size: tuple[int, int], ordering: list[
     """
     original_image = Image.open(image_path)
     image_size = original_image.size
-    new_image = Image.new(mode="RGB", size=image_size)
+    new_image = Image.new(mode=original_image.mode, size=image_size)
 
     if not valid_input(image_size, tile_size, ordering):
         raise ValueError("The tile size or ordering are not valid for the given image")
@@ -70,7 +70,7 @@ def rearrange_tiles(image_path: str, tile_size: tuple[int, int], ordering: list[
 
 
 
-rearrange_tiles("images/great_wave_scrambled.png", (16, 16), [int(x) for x in open("images/great_wave_order.txt").readlines()], "images/my.png")
+rearrange_tiles("images/pydis_logo_scrambled.png", (256, 256), [int(x) for x in open("images/pydis_logo_order.txt").readlines()], "images/my.png")
 # rearrange_tiles("images/pydis_logo_scrambled.png", (256, 256), [0,1,2,3,4,5,6,7], "images/my.png")
 
 
