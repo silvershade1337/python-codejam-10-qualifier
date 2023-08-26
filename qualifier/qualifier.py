@@ -10,7 +10,7 @@ def valid_input(image_size: tuple[int, int], tile_size: tuple[int, int], orderin
     divides = image_size[0] % tile_size[0] == 0 and image_size[1]%tile_size[1] == 0
     div = (image_size[0]*image_size[1]) // (tile_size[0]*tile_size[1])
     # print(f"\ndiv+{div} imsize: {image_size}, tilesize: {tile_size}")
-    orderingCorrect = len(set(ordering)) == div and all([x in list(range(div)) for x in ordering])
+    orderingCorrect = len(set(ordering)) == div and all([0 <= x < div for x in ordering])
 
     return divides and orderingCorrect
 
