@@ -1,3 +1,7 @@
+# generated images
+qualifier/images/my.png
+qualifier/images/user_output.png
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
